@@ -6,12 +6,12 @@ args = None
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train ')
-    parser.add_argument('--data-dir', default='/home/teddy/UCF-Train-Val-Test',
+    parser.add_argument('--data-dir', default='/home/matijamasaibb/Bayesian-Crowd-Counting/data/ShanghaiA-processed',
                         help='training data directory')
-    parser.add_argument('--save-dir', default='/home/teddy/vgg',
+    parser.add_argument('--save-dir', default='/home/matijamasaibb/Bayesian-Crowd-Counting/vgg',
                         help='directory to save models.')
 
-    parser.add_argument('--lr', type=float, default=1e-5,
+    parser.add_argument('--lr', type=float, default=1e-6,
                         help='the initial learning rate')
     parser.add_argument('--weight-decay', type=float, default=1e-4,
                         help='the weight decay')
@@ -43,7 +43,7 @@ def parse_args():
                         help='whether to use background modelling')
     parser.add_argument('--sigma', type=float, default=8.0,
                         help='sigma for likelihood')
-    parser.add_argument('--background-ratio', type=float, default=0.15,
+    parser.add_argument('--background-ratio', type=float, default=0.1,
                         help='background ratio')
     args = parser.parse_args()
     return args

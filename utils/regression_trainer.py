@@ -11,7 +11,7 @@ import logging
 import numpy as np
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from  models.vgg import vgg19
-from datasets.crowd import Crowd
+from datasets.crowd_sh import Crowd
 from losses.bay_loss import Bay_Loss
 from losses.post_prob import Post_Prob
 

@@ -3,8 +3,8 @@ from PIL import Image
 import numpy as np
 import os
 from glob import glob
-import cv2
 import argparse
+import cv2
 
 
 def cal_new_size(im_h, im_w, min_size, max_size):
@@ -43,7 +43,8 @@ def generate_data(im_path):
     im = Image.open(im_path)
     im_w, im_h = im.size
     mat_path = im_path.replace('.jpg', '_ann.mat')
-    points = loadmat(mat_path)['annPoints'].astype(np.float32)
+    #print(loadmat(mat_path).keys())
+    points = loadmat(mat_path)['image_info'][0,0][0,0][0].astype(np.float32)
     idx_mask = (points[:, 0] >= 0) * (points[:, 0] <= im_w) * (points[:, 1] >= 0) * (points[:, 1] <= im_h)
     points = points[idx_mask]
     im_h, im_w, rr = cal_new_size(im_h, im_w, min_size, max_size)
@@ -56,9 +57,9 @@ def generate_data(im_path):
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Test ')
-    parser.add_argument('--origin-dir', default='/home/teddy/UCF-QNRF_ECCV18',
+    parser.add_argument('--origin-dir', default='/home/matijamasaibb/Bayesian-Crowd-Counting/data/ShanghaiA',
                         help='original data directory')
-    parser.add_argument('--data-dir', default='/home/teddy/UCF-Train-Val-Test',
+    parser.add_argument('--data-dir', default='/home/matijamasaibb/Bayesian-Crowd-Counting/data/ShanghaiA-processed',
                         help='processed data directory')
     args = parser.parse_args()
     return args

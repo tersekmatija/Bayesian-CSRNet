@@ -1,7 +1,7 @@
 import torch
 import os
 import numpy as np
-from datasets.crowd import Crowd
+from datasets.crowd_sh import Crowd
 from models.vgg import vgg19
 import argparse
 
@@ -10,9 +10,9 @@ args = None
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Test ')
-    parser.add_argument('--data-dir', default='/home/teddy/UCF-Train-Val-Test',
+    parser.add_argument('--data-dir', default='/home/matijamasaibb/Bayesian-Crowd-Counting/data/ShanghaiA-processed',
                         help='training data directory')
-    parser.add_argument('--save-dir', default='/home/teddy/vgg',
+    parser.add_argument('--save-dir', default='/home/matijamasaibb/Bayesian-Crowd-Counting/vgg',
                         help='model directory')
     parser.add_argument('--device', default='0', help='assign device')
     args = parser.parse_args()
