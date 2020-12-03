@@ -11,7 +11,6 @@ dependencies:
   - cycler=0.10.0
   - dataclasses=0.7
   - freetype=2.10.4
-  - icc_rt=2019.0.0
   - icu=58.2
   - intel-openmp=2020.2
   - jpeg=9b
@@ -49,10 +48,7 @@ dependencies:
   - torchvision=0.8.1
   - tornado=6.1
   - typing_extensions=3.7.4.3
-  - vc=14.1
-  - vs2015_runtime=14.16.27012
   - wheel=0.36.0
-  - wincertstore=0.2
   - xz=5.2.5
   - zlib=1.2.11
   - zstd=1.4.5
