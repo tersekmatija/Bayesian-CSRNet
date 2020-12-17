@@ -10,7 +10,7 @@ from torch.utils.data.dataloader import default_collate
 import logging
 import numpy as np
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
-from  models.vgg import vgg19
+#from  models.vgg import vgg19
 from models.model import CSRNet
 from datasets.crowd_sh import Crowd
 from losses.bay_loss import Bay_Loss
