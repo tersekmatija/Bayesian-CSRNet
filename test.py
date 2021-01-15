@@ -2,7 +2,6 @@ import torch
 import os
 import numpy as np
 from datasets.crowd_sh import Crowd
-#from models.vgg import vgg19
 from models.model import CSRNet
 import argparse
 
